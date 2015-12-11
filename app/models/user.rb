@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
       user.uid = auth[:uid]
       user.screen_name = auth[:info][:nickname]
       user.name = auth[:info][:name]
+      user.icon = auth[:info][:image]
     end
   end
 end
