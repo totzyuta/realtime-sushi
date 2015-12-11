@@ -18,6 +18,10 @@ gem "puma"
 gem "gemoji"
 gem "materialize-sass"
 
+gem "omniauth"
+gem "omniauth-twitter"
+gem "settingslogic"
+
 group :development, :test do
   gem 'byebug'
 end
