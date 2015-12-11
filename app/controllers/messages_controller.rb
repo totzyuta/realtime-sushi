@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
   def create
     ActionCable.server.broadcast "messages",
-      body: params[:message][:body],
+      image_path: "images/emoji/unicode/1f363.png",
       username: params[:message][:username]
 
     head :ok

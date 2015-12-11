@@ -3,4 +3,4 @@ App.messages = App.cable.subscriptions.create "MessagesChannel",
     $("#messages").append @renderMessage(data)
 
   renderMessage: (data) ->
-    "<p><b>[#{data.username}]:</b> #{data.body}"
+    "<p><b>[#{data.username}]:</b> <image src='#{data.image_path}'>"
