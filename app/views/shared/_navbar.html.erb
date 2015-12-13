@@ -1,0 +1,11 @@
+<nav>
+  <% if current_user %>
+    <%= image_tag current_user.icon, class: "nav__user-icon" %>
+    <%= current_user.name %>
+    <span class="right nav__logout-label">
+      <%= link_to "logout", logout_path %>
+    </span>
+  <% else %>
+    <%= link_to "login with twitter", "/auth/twitter" %>
+  <% end %>
+</nav>

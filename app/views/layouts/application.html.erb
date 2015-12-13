@@ -7,13 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <% if current_user %>
-      <%= image_tag current_user.icon %><%= current_user.name %><span class="right"><%= link_to "logout", logout_path %></span>
-    <% else %>
-      <%= link_to "login with twitter", "/auth/twitter" %>
-    <% end %>
-  </nav>
+
+<%= render "shared/navbar" %>
 
 <%= yield %>
 
