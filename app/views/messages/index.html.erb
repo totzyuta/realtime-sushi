@@ -1,7 +1,17 @@
 <h1 class="center red lighten-2 white-text"><%= emojify "Real-time SUSHI" %></h1>
 
+<% @messages.each do |message| %>
+  <% user = User.find_by(id: message.user_id) %>
+  <script>
+    var randTop = Math.floor(Math.random() * (document.documentElement.clientHeight + 1));
+    var randLeft = Math.floor(Math.random() * (document.documentElement.clientWidth + 1));
+    var username = "<%= user.screen_name %>";
+    var usericon = "<%= user.icon %>";
+    document.write("<a href='https://twitter.com/" + username + "' target='_blank'><span style='position: absolute; top: " + randTop + "px; left: " + randLeft + "px;'><img src='images/emoji/unicode/1f363.png' style='width: 20px; height: 20px;'><img src='" + usericon + "' style='border-radius: 999px; width: 10px; height: 10px;'></span></a>");
+  </script>
+<% end %>
+
 <div id='messages'></div>
-<br/><br/>
 
 <% if current_user %>
   <%= form_for :message, url: messages_path, remote: true, id: 'messages-form' do |f| %>

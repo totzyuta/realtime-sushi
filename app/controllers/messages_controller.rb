@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   def index
+    @messages = Message.find(Message.pluck(:id).shuffle[0..30])
   end
 
   def create
