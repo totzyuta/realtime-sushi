@@ -1,5 +1,6 @@
 <h1 class="center red lighten-2 white-text"><%= emojify "Real-time SUSHI" %></h1>
 
+<!-- （´-`）.｡oO (こんなことしたくなかったさ... -->
 <% @messages.each do |message| %>
   <% user = User.find_by(id: message.user_id) %>
   <script>
