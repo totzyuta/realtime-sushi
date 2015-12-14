@@ -21,6 +21,7 @@ gem "materialize-sass"
 gem "omniauth"
 gem "omniauth-twitter"
 gem "settingslogic"
+gem "unicorn"
 
 group :development, :test do
   gem 'byebug'
